@@ -2,5 +2,6 @@
 import requests
 
 
-info = requests.get('https://some-random-api.ml/meme')
-print(info.json().get('image'))
+def meme():
+    info = requests.get('https://some-random-api.ml/meme')
+    return (info.json().get('image'))
