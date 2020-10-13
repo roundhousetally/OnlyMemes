@@ -1,9 +1,18 @@
 #!/usr/bin/python3
 """ Posts class """
+from datetime import datetime
 import sqlalchemy
-from sqlalchemy import Column, String
+from classes import Base
+from sqlalchemy import Column, String, Integer, DateTime
 from sqlalchemy.orm import relationship
 
 
-class Profile():
-    """ The profile """
+class Post(Base):
+    """ The post """
+    __tablename__ = 'posts'
+    id = Column(Integer, primary_key=True)
+    text = Column(String(120), nullable=True)
+    media = Column(String(50), nullable=True)
+    likes = Column(Integer, nullable=False, default=0)
+    shares = Column(Integer, nullable=False, default=0)
+    datetime = Column(DateTime, nullable=False, default=datetime.utcnow)
