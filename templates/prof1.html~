@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../styles/common.css">
+    <link rel="stylesheet" type="text/css" href="../styles/header.css">
+    <link rel="icon" href="../images/cage.jpg">
+    <title>OnlyMemes</title>
+  </head>
+  <body>
+    <header>
+    </header>
+    <img src="../images/Onlymemeslogo2.jpg" class="center">
+    <footer>
+    </footer>
+  </body>
+</html>
