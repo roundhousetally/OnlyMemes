@@ -1,5 +1,5 @@
 header {
+    display: flex;
     background: white;
-    height: 70px;
     width: 100%;
 }

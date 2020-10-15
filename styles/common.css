@@ -1,4 +1,9 @@
+html {
+    height: 100%;
+}
+
 body {
+    height: 100%;
     margin: 0;
     padding: 0;
     color: #484848;
@@ -6,10 +11,12 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
 }
 .center {
-  display: block;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  justify-content: center;
+  align-items: center;
 }
 .profilebox {
     display: flex;
@@ -35,5 +42,8 @@ div.wap {
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 125px;
+    vertical-align: middle;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
 }
