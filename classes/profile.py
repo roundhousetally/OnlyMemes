@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Contains the Profile class """
 
-from classes import Base
+from classes import Base, storage
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 
@@ -17,12 +17,12 @@ class Profile(Base):
 
     def save(self):
         """ Adds the instance to the database session. """
-        models.storage.new(self)
+        storage.new(self)
 
     def delete(self):
         """ Removes the instance from the database session. """
-        models.storage.delete(self)
+        storage.delete(self)
 
     def __str__(self):
         """ Returns a string representation of the instance. """
-        return "{}[{}] - {} ({} posts)".format(name, id, description[:15] + ('...' if len(description) > 15 else ''), len(posts))
+        return "{}[{}] - {} ({} posts)".format(self.name, self.id, self.description[:15] + ('...' if len(self.description) > 15 else ''), len(self.posts))
