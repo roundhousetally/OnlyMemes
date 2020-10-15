@@ -15,8 +15,14 @@ class Profile(Base):
     pfp = Column(String(25), nullable=True)
     posts = relationship("Posts", backref="profile")
 
-    def __init__(self, **kwargs):
-        """ Initilizes profile instance. """
-        for key, value in kwargs.items():
-            if key != "__class__":
-                setattr(self, key, value)
+    def save(self):
+        """ Adds the instance to the database session. """
+        models.storage.new(self)
+
+    def delete(self):
+        """ Removes the instance from the database session. """
+        models.storage.delete(self)
+
+    def __str__(self):
+        """ Returns a string representation of the instance. """
+        return "{}[{}] - {} ({} posts)".format(name, id, description[:15] + ('...' if len(description) > 15 else ''), len(posts))
