@@ -14,4 +14,3 @@ settings = {
 def posts(profile_id=None):
     if profile_id is None:
         print("Profile ID expected")
-    
