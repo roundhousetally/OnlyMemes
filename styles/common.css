@@ -1,4 +1,6 @@
-
+html {
+    height: 100%;
+}
 .center {
     display: block;
     margin-left: auto;
