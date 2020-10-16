@@ -1,26 +1,16 @@
 html {
     height: 100%;
 }
-
-body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    color: #484848;
-    font-size: 14px;
-    font-family: 'Noto Sans JP', sans-serif;
-}
 .center {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  justify-content: center;
-  align-items: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 .profilebox {
     display: flex;
     min-height: 100%;
+    object-fit: cover;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
@@ -29,6 +19,59 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+}
+
+}
+.profim {
+    height: auto;
+    display: block;
+    width: 50%;
+    position: absolute;
+}
+.image {
+    border-radius:1em;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #2aade3;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.profim:hover .overlay{
+    opacity: 1;
+}
+.descr {
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.profilecard {
+    position: relative;
+    max-width: 100%;
+    background-color: #2aade3;
+    color: white;
+
+}
+a { 
+    text-decoration: none;
+   background-color: none; 
+   color: white;
 }
 .profilebox > div {
     display: flex;
@@ -42,8 +85,20 @@ div.wap {
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    vertical-align: middle;
-    height: 100%;
+    margin-top: 125px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-size: 14px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.footer {
+    max-width: 100%;
+    display: flex;
     align-items: center;
+    margin-right: auto;
+    margin-left: auto;
     justify-content: center;
 }
