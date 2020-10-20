@@ -11,7 +11,7 @@ from flasgger.utils import swag_from
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 app.register_blueprint(app_views)
-cors = CORS(app, resources={r"/api/views/*": {"origins": "*"}})
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 
 @app.teardown_appcontext
@@ -19,14 +19,6 @@ def close_db(error):
     import classes
     """ Close Storage """
     classes.storage.close()
-
-
-@app.teardown_appcontext
-def close_db(error):
-#    import classes
-    """ Close it up """
-#    classes.storage.close()
-
 
 @app.errorhandler(404)
 def not_found(error):
