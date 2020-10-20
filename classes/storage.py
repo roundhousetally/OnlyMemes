@@ -14,7 +14,7 @@ class Storage:
 
     def __init__(self):
         """ Starts the database. """
-        self.__engine = create_engine('mysql+mysqldb://root:572483@localhost/onlymemes')
+        self.__engine = create_engine('mysql+mysqldb://root:chimpman435@localhost/onlymemes')
 
     def getProfile(self, id=None, name=None):
         """ Returns one or more Profile objects from the database. """
