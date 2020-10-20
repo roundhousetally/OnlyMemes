@@ -91,7 +91,7 @@ img {
 }
 .posts {
     display: flex;
-    max-width: 100%;
+    width: 50%;
     overflow: auto;
     border: 8px solid #2aade3;
     border-radius:1em;
