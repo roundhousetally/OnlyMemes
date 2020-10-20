@@ -11,7 +11,7 @@ class Profile(Parent, Base):
     description = Column(String(240), nullable=True)
     api = Column(String(100), nullable=False)
     pfp = Column(String(25), nullable=True)
-    posts = relationship("Posts", backref="profile")
+    posts = relationship("Post", backref="profile")
 
     def __str__(self):
         """ Returns a string representation of the instance. """
