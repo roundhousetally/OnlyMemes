@@ -10,12 +10,12 @@ html {
 .profilebox {
     display: flex;
     min-height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     text-align: center;
-    align-items: center;
+    align-items: stretch;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
@@ -24,12 +24,21 @@ html {
 }
 .profim {
     height: auto;
-    display: block;
-    width: 50%;
-    position: absolute;
+    display: flex;
+    position: relative;
+    object-fit: contain;
+    justify-content: center;
 }
 .image {
-    border-radius:1em;
+    border-radius: 1em;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    height: auto;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 .overlay {
     position: absolute;
@@ -37,41 +46,44 @@ html {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 100%;
     width: 100%;
+    height: 100%;
     opacity: 0;
     transition: .5s ease;
     background-color: #2aade3;
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
 }
 
 .profim:hover .overlay{
     opacity: 1;
+
 }
 .descr {
-    color: white;
-    font-size: 14px;
     position: absolute;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    text-align: center;
+    font-weight: bold;
 }
+
 .profilecard {
+    flex: 1;
     position: relative;
-    max-width: 100%;
     background-color: #2aade3;
     color: white;
+    width: 50%;
+    justify-content: center;
+    overflow: hidden;
+    horizontal-align: center;
+    align-items: stretch;
+    vertical-align: middle;
 
 }
 a { 
     text-decoration: none;
-   background-color: none; 
-   color: white;
+    background-color: none; 
+    color: white;
 }
 .profilebox > div {
     display: flex;
@@ -95,7 +107,7 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
 }
 .footer {
-    max-width: 100%;
+    max-width: 80%;
     display: flex;
     align-items: center;
     margin-right: auto;
