@@ -21,21 +21,22 @@ def posts(profile_id=None):
             return ("Profile ID expected")
         info = storage.getPost(profile_id=profile_id)
         for i in range(len(info)):
-            info[i] = str(info[i])
+            info[i] = info[i].to_dict()
         return json.dumps(info)
     else:
-        new_post = Post()
+        new_post = storage.new(Post())
         if not request.get_json():
             abort(400, description="Not a JSON")
         data = request.get_json()
         for key, val in data.items():
             setattr(new_post, key, val)
         new_post.save()
-        return str(new_post)
+        storage.save()
+        return json.dumps(new_post.to_dict())
 
 @app_views.route('/profiles', **settings)
 def profiles():
     info = storage.getProfile()
     for i in range(len(info)):
-        info[i] = str(info[i])
+        info[i] = info[i].to_dict()
     return json.dumps(info)

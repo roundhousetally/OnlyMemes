@@ -28,4 +28,6 @@ class Parent:
             del res["posts"]
         if "profile" in res:
             del res["profile"]
+        if "_sa_instance_state" in res:
+            del res["_sa_instance_state"]
         return res
