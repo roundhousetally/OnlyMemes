@@ -9,10 +9,9 @@ function getProfile () {
 	data: JSON.stringify({}),
 	success: function (data, status) {
 	    for (let i = 0; i < data.length; i++) {
-		let pr = '<a href="google.com" class=temp></a>'
+		let pr = '<a href="onlymemes.biz/p/${data[i].name}" class=temp></a>'
 		$('.profilebox').append('<div class="profilecard cheese"></div>');
 		$('.profilebox .cheese').append(pr);
-		console.log("Got it");
 		$('.cheese').removeClass('cheese');
 		$('.temp').append('<div class="profilename"><h1>' +
 				  data[i].name + '</h1></div>');
