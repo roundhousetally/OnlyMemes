@@ -11,6 +11,7 @@ function setupPage () {
             $('header').append('<div class="text"></div>');
             $('.text').append('<div class="profilename"></div>');
             $('.text .profilename').append('<h2>' + data.name + '</h2>');
+	    $('.text .profilename').append('<a href="onlymemes.biz" class="link"></a>');
             $('.text').append('<div class="imgdesc"></div>');
             $('.imgdesc').append('<div class="profim"></div>');
             $('.profim').append('<img src=' + data.pfp + '>');

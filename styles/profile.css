@@ -20,7 +20,11 @@ header {
 img {
     max-width: 100%;
 }
-
+.link {
+    text-decoration: none;
+    background-color: none; 
+    color: white;
+}
 body {
     margin: 0;
     padding: 0;
