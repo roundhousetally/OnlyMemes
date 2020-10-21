@@ -34,7 +34,7 @@ def posts(profile_id=None):
         return json.dumps(new_post.to_dict())
 
 @app_views.route('/profiles/<name>', **settings)
-def profiles(name=None):
+def profile(name=None):
     if request.method == 'GET':
         info = storage.getProfile()
         if name is None:
@@ -42,3 +42,11 @@ def profiles(name=None):
                 info[i] = info[i].to_dict()
             return json.dumps(info)
         return json.dumps(storage.getProfile(name=name)[0].to_dict())
+
+@app_views.route('/profiles', **settings)
+def profiles():
+    if request.method == 'GET':
+        info = storage.getProfile()
+        for i in range(len(info)):
+            info[i] = info[i].to_dict()
+        return json.dumps(info)
