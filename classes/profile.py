@@ -27,8 +27,8 @@ class Profile(Parent, Base):
             p.text = r['slip']['advice']
         elif 'url' in r:
             p.media = r['url']
-        elif 'data' in r:
-            p.media = r['data']['memes'][0]['url']
+        elif 'image' in r:
+            p.media = r['image']
         p.profile_id = self.id
         p.save()
 
