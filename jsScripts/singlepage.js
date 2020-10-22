@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-let profilenm = window.location.href.slice(window.location.href.lastIndexOf("/")+ 1)
+let profilenm = window.location.href.slice(window.location.href.lastIndexOf("/") + 1).replace('-', ' ')
 
 function getProfile () {
     $.ajax ({
