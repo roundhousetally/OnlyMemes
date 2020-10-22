@@ -1,5 +1,5 @@
 let profile = window.location.href;
-profile = profile.slice(profile.lastIndexOf("/") + 1);
+profile = profile.slice(profile.lastIndexOf("/") + 1).replace('-', ' ');
 function setupPage () {
     $.ajax ({
         type: 'GET',
@@ -19,7 +19,6 @@ function setupPage () {
                 $('.imgdesc').append('<div class="descr">' + data.description + '</div>');
             }
             profile = data;
-
             getPosts();
         }
     });

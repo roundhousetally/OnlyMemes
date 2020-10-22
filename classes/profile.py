@@ -18,7 +18,7 @@ class Profile(Parent, Base):
     def post(self):
         """ Tells the profile to generate a new post. """
         p = Post()
-        r = requests.get(api).json()
+        r = requests.get(self.api).json()
         if isinstance(r, list):
             r = r[0]
         if 'value' in r:
