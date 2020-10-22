@@ -2,6 +2,7 @@
 """ Contains the Profile class """
 from classes.base import Base, Parent
 from classes.post import Post
+import random
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 import requests
@@ -18,7 +19,8 @@ class Profile(Parent, Base):
     def post(self):
         """ Tells the profile to generate a new post. """
         p = Post()
-        r = requests.get(self.api).json()
+        stuff = {'User-Agent': 'Mozilla/5.0'}
+        r = requests.get(self.api, headers=stuff).json()
         if isinstance(r, list):
             r = r[0]
         if 'value' in r:
@@ -27,8 +29,9 @@ class Profile(Parent, Base):
             p.text = r['slip']['advice']
         elif 'url' in r:
             p.media = r['url']
-        elif 'image' in r:
-            p.media = r['image']
+        elif 'data' in r and 'children' in r.get('data'):
+            num = random.randint(0, 100)
+            p.media = r.get('data').get('children')[num].get('data').get('thumbnail')
         p.profile_id = self.id
         p.save()
 
