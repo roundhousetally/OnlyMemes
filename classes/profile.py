@@ -31,7 +31,7 @@ class Profile(Parent, Base):
             p.media = r['url']
         elif 'data' in r and 'children' in r.get('data'):
             num = random.randint(0, 100)
-            p.media = r.get('data').get('children')[num].get('data').get('thumbnail')
+            p.media = r.get('data').get('children')[num].get('data').get('url')
         p.profile_id = self.id
         p.save()
 
