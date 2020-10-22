@@ -29,13 +29,13 @@ class Profile(Parent, Base):
             p.text = r['slip']['advice']
         elif 'url' in r:
             p.media = r['url']
-        elif 'data' in r and 'children' in r.get('data'):
+        elif 'data' in r:
             num = random.randint(0, 100)
             link = r.get('data').get('children')[num].get('data').get('url')
             if '.jpg' in link or '.png' in link:
                 p.media = link
         if p.media is None and p.text is None:
-            p.delete()
+            del p
         else:
             p.profile_id = self.id
             p.save()

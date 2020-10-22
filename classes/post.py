@@ -10,7 +10,7 @@ class Post(Parent, Base):
     """ The post """
     __tablename__ = 'posts'
     text = Column(String(240), nullable=True)
-    media = Column(String(50), nullable=True)
+    media = Column(String(100), nullable=True)
     likes = Column(Integer, nullable=False, default=0)
     shares = Column(Integer, nullable=False, default=0)
     datetime = Column(DateTime, nullable=False, default=datetime.utcnow)
