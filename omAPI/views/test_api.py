@@ -6,7 +6,6 @@ from classes import storage
 from classes.post import Post
 from classes.profile import Profile
 import json
-#from flask.globals import requests
 
 
 settings = {
@@ -14,7 +13,7 @@ settings = {
     'methods': ['GET', 'POST']
 }
 
-@app_views.route('/posts/<profile_id>', **settings)
+@app_views.route('/posts/<int:profile_id>', **settings)
 def posts(profile_id=None):
     if request.method == 'GET':
         if profile_id is None:
@@ -34,9 +33,20 @@ def posts(profile_id=None):
         storage.save()
         return json.dumps(new_post.to_dict())
 
+@app_views.route('/profiles/<name>', **settings)
+def profile(name=None):
+    if request.method == 'GET':
+        info = storage.getProfile()
+        if name is None:
+            for i in range(len(info)):
+                info[i] = info[i].to_dict()
+            return json.dumps(info)
+        return json.dumps(storage.getProfile(name=name)[0].to_dict())
+
 @app_views.route('/profiles', **settings)
 def profiles():
-    info = storage.getProfile()
-    for i in range(len(info)):
-        info[i] = info[i].to_dict()
-    return json.dumps(info)
+    if request.method == 'GET':
+        info = storage.getProfile()
+        for i in range(len(info)):
+            info[i] = info[i].to_dict()
+        return json.dumps(info)

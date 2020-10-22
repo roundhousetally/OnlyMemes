@@ -4,7 +4,7 @@ html {
 header {
     height: auto;
     display: flex;
-    max-width: 100%;
+    max-width: 50%;
     text-align: center;
     flex-direction: column;
     flex-wrap: wrap;
@@ -14,8 +14,17 @@ header {
     background-color: #2aade3;
     color: white;
     align-items: center;
- }
-
+    margin-right: auto;
+    margin-left: auto;
+}
+img {
+    max-width: 100%;
+}
+.link {
+    text-decoration: none;
+    background-color: none; 
+    color: white;
+}
 body {
     margin: 0;
     padding: 0;
@@ -39,7 +48,7 @@ img {
 
 .profilename {
     font-weight: bold;
-    border-radius: 8px;
+    border-radius: 10px;
     height: auto;
     display: block;
     margin-top: auto;
@@ -101,6 +110,7 @@ img {
     margin-right: auto;
     margin-left: auto;
     object-fit: contain;
+    background-color: #2aade3;
 }
 .footer {
     max-width: 100%;
