@@ -3,7 +3,7 @@
 Start the Flask
 """
 from classes import storage
-from flask import Flask, render_template
+from flask import Flask, render_template, abort
 
 app = Flask(__name__)
 
@@ -21,7 +21,7 @@ def not_found(e):
 @app.route('/<profile_name>', strict_slashes=False)
 def profile(profile_name=None):
     """ Generates profile page. """
-    for profile in storage.getProfiles():
+    for profile in storage.getProfile():
         if profile_name == profile.name:
             return render_template('prof1.html')
     abort(404)
