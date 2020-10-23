@@ -105,11 +105,7 @@ img {
     align-items: center;
     font-size: 18px;
 }
-.cheese {
-    border-radius:1em;
-    border-color: white;
-    color: white;       
-}
+  
 .posts {
     display: flex;
     width: 50%;
