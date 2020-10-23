@@ -22,7 +22,7 @@ def not_found(e):
 def profile(profile_name=None):
     """ Generates profile page. """
     for profile in storage.getProfiles():
-        if profile_name == profile.name:
+        if profile_name.replace('-', ' ') == profile.name:
             return render_template('prof1.html')
     abort(404)
 
