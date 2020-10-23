@@ -99,6 +99,8 @@ img {
     margin-right: auto;
     font-weight: bold;
     padding-bottom: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
 }
 .descr {
     border-radius: 8px;
