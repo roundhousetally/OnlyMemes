@@ -21,8 +21,8 @@ def not_found(e):
 @app.route('/<profile_name>', strict_slashes=False)
 def profile(profile_name=None):
     """ Generates profile page. """
-    for profile in storage.getProfile():
-        if profile_name == profile.name:
+    for profile in storage.getProfiles():
+        if profile_name.replace('-', ' ') == profile.name:
             return render_template('prof1.html')
     abort(404)
 
