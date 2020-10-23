@@ -4,7 +4,7 @@
 from classes.base import Base
 from classes.profile import Profile
 from classes.post import Post
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, desc
 from sqlalchemy.orm import scoped_session, sessionmaker
 
 class Storage:
@@ -31,11 +31,11 @@ class Storage:
         """ Returns one or more Post objects from the database. """
         data = self.__session.query(Post)
         if post_id is not None:
-            data = data.filter_by(id=post_id).all()
+            data = data.filter_by(id=post_id).order_by(-Post.datetime).all()
         elif profile_id is not None:
-            data = data.filter_by(profile_id=profile_id).all()
+            data = data.filter_by(profile_id=profile_id).order_by(-Post.datetime).all()
         else:
-            data = data.all()
+            data = data.order_by(-Post.datetime).all()
         return data
 
     def new(self, obj):
