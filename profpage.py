@@ -13,10 +13,18 @@ def close_db(error):
     """ Close Storage """
     storage.close()
 
+@app.errorhandler(404)
+def not_found(e):
+    """ 404 error handler. """
+    return render_template('404page.html')
+
 @app.route('/<profile_name>', strict_slashes=False)
 def profile(profile_name=None):
     """ Generates profile page. """
-    return render_template('prof1.html')
+    for profile in storage.getProfiles():
+        if profile_name == profile.name:
+            return render_template('prof1.html')
+    abort(404)
 
 if __name__ == "__main__":
     """ Main here """
