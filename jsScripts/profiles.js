@@ -9,7 +9,7 @@ function getProfile () {
 	data: JSON.stringify({}),
 	success: function (data, status) {
 	    for (let i = 0; i < data.length; i++) {
-		let pr = '<a href="onlymemes.biz/p/' + data[i].name.replace(' ', '-') + '" class="temp"></a>'
+		let pr = '<a href="p/' + data[i].name.replace(' ', '-') + '" class="temp"></a>'
 		$('.profilebox').append('<div class="profilecard cheese"></div>');
 		$('.profilebox .cheese').append(pr);
 		$('.cheese').removeClass('cheese');
