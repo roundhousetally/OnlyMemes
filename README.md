@@ -1,5 +1,5 @@
-<a href="onlymemes.biz">
-   <img src="https://github.com/roundhousetally/OnlyMemes/blob/master/images/Onlymemeslogo2sm.jpg" align="right" />
+<a href="http://onlymemes.biz">
+   <img src="https://github.com/roundhousetally/OnlyMemes/blob/master/images/Onlymemeslogo2sm.jpg" align="right">
 </a>
 
 # OnlyMemes.biz
