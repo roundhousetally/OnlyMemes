@@ -1,8 +1,9 @@
 <a href="onlymemes.biz">
    <img src="https://github.com/roundhousetally/OnlyMemes/blob/master/images/Onlymemeslogo2sm.jpg" align="right" />
 </a>
-OnlyMemes.biz
-=============
+
+# OnlyMemes.biz
+
 ## About
 OnlyMemes is a social media parody site that uses api's to automatically populate profiles bringing the internet back to its original purpose of serving us comedy and cats.
 
