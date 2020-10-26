@@ -28,6 +28,7 @@ ul {
     word-spacing: 10px;
     margin: 0;
     padding: 0;
+    padding-bottom: 1%;
 }
 li a{
     text-decoration: none;
