@@ -176,3 +176,16 @@ img {
     margin-left: auto;
     justify-content: center;
 }
+.button {
+  color: white;
+  background-color: #2aade3;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 1em;
+  border-style: dotted;
+  border-color: white;
+  font-weight: bold;
+}
