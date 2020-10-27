@@ -20,7 +20,33 @@ html {
     margin-right: auto;
     width: 50%;
 }
-
+li {
+    display: inline-block;
+}
+ul {
+    list-style-type: none;
+    text-align: center;
+    width: 100%;
+    word-spacing: 10px;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 1%;
+}
+li a{
+    text-decoration: none;
+    color: #2aade3;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+@media only screen and (max-width: 782px){
+    .profilebox {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+}
 }
 .profim {
     height: auto;
