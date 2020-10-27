@@ -19,20 +19,23 @@ function setupPage () {
                 $('.imgdesc').append('<div class="descr">' + data.description + '</div>');
             }
             profile = data;
-            getPosts();
+            getPosts(0);
         }
     });
 }
 
-function getPosts () {
+function getPosts (page) {
     $.ajax ({
 	type: 'GET',
-	url: 'http://onlymemes.biz/api/posts/' + profile.id,
+	url: 'http://onlymemes.biz/api/posts/' + profile.id + '/' + page,
 	contentType: 'application/json',
 	dataType: 'json',
 	data: JSON.stringify({}),
 	success: function (data, status) {
 	    for (let i = 0; i < data.length; i++) {
+		if ('ending' in data[i]) {
+		    return (0);
+		}
 		$('.posts').append(`<div id="${data[i].id}">`);
 		if (data[i].media) {
 			$(`#${data[i].id}`).append('<img src=' + data[i].media + '></div>');
@@ -42,8 +45,18 @@ function getPosts () {
 	    }
         }
     });
+    return (1);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
     setupPage();
+    let i = 1;
+    $(window).scroll(function() {
+	if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+	    let newVar = getPost(i);
+	    if (newVar === 0) {
+		return;
+	    }
+	    i = i + 1;
+    });
 });
