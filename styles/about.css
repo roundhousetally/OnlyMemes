@@ -30,7 +30,7 @@ li a{
 img {
     border-radius: 1em;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row;
     align-items: center;
     height: auto;
     max-width: 90%;
@@ -62,10 +62,9 @@ div#main {
     color: black;
     justify-content: center;
     align-items: center;
-    max-width: 50%;
+    max-width: 80%;
     margin-left: auto;
     margin-right: auto;
-    border-radius:1em;
     border-radius:1em;
     border-style: dotted;
 }
@@ -74,21 +73,23 @@ div#features {
     padding-bottom: 3%;
     margin-left: auto;
     margin-right: auto;
-
+    border-style: dotted;
+    border-radius:1em;
+    max-width: 95%;
 } 
+
 div#about {
     padding-top: 3%;
     padding-bottom: 3%;
     margin-left: auto;
     margin-right: auto;
-
+    max-width: 95%;
 }
 div#first {
     padding-top: 3%;
     padding-bottom: 3%;
     margin-left: auto;
     margin-right: auto;
-
 }
 div#tagline {
     font-size: 20px;
@@ -97,4 +98,119 @@ div#tagline {
 div#title {
     font-size: 30px;
     padding: 1%;
+    font-size: 36px;    
+}
+p {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+div#picbx {
+    display: flex;
+    padding-top: auto;;
+    padding-bottom: auto;;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+    justify-content: center;
+}
+div#social {
+    border-style: dotted;
+    border-radius:1em;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 95%;
+}
+.pic {
+    height: auto;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.fa {
+  max-width: 50%;;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  color: #2aade3; 
+  padding: 1.5%;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+
+div#picbx {
+    align-items: baseline;
+}
+div#sean {
+    display:flex;
+    flex: 1;
+    max-width: 30%;
+    flex-direction: column;
+    border-radius:1em;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    justify-content: center;
+}
+div#lance {
+    display:flex;
+    flex: 1;
+    max-width: 30%;
+    flex-direction: column;
+    border-radius:1em;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    justify-content: center;
+}
+div#tahlia {
+    display:flex;
+    flex: 1;
+    max-width: 30%;
+    flex-direction: column;
+    border-radius:1em;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    justify-content: center;
+}
+div#boxone {
+    display: flex;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+    justify-content: center;
+
+}
+div#boxtwo {
+    display: flex;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+    justify-content: center;
+}
+div#boxthree {
+    display: flex;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+    justify-content: center;
 }
