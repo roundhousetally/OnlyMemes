@@ -23,8 +23,8 @@ class Profile(Parent, Base):
         r = requests.get(self.api, headers=stuff).json()
         if isinstance(r, list):
             r = r[0]
-        if 'value' in r:
-            p.text = r['value']
+        if 'punchline' in r:
+            p.text = r.get('setup') + '\n' + r.get('punchline')
         elif 'slip' in r:
             p.text = r['slip']['advice']
         elif 'url' in r:
