@@ -14,22 +14,19 @@ settings = {
 }
 
 @app_views.route('/posts/<int:profile_id>/<int:page>', **settings)
-def posts(profile_id=None, page=1):
+def posts(profile_id=None, page=0):
     if request.method == 'GET':
         if profile_id is None:
             return ("Profile ID expected")
         info = storage.getPost(profile_id=profile_id)
-        print(info)
         if len(info) >= page*25+25:
-            print('num1')
             info = info[page*25:25*page+25]
         else:
             ending = {'ending': 'right here m8'}
             if len(info) >= page*25:
                 info.append(ending)
-                print('num2')
-            else:
-                return json.dumps(ending)
+             else:
+                return json.dumps([ending])
         for i in range(len(info)):
             if type(info[i]) is not dict:
                 info[i] = info[i].to_dict()
