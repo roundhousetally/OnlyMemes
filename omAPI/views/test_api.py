@@ -24,8 +24,9 @@ def posts(profile_id=None, page=0):
         else:
             ending = {'ending': 'right here m8'}
             if len(info) >= page*25:
+                info = info[page*25:]
                 info.append(ending)
-             else:
+            else:
                 return json.dumps([ending])
         for i in range(len(info)):
             if type(info[i]) is not dict:

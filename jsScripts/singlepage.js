@@ -52,11 +52,12 @@ document.addEventListener('DOMContentLoaded', function () {
     setupPage();
     let i = 1;
     $(window).scroll(function() {
-	if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
-	    let newVar = getPost(i);
+	if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+	    let newVar = getPosts(i);
 	    if (newVar === 0) {
 		return;
 	    }
 	    i = i + 1;
+        }
     });
 });
