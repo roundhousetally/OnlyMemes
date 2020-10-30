@@ -93,7 +93,8 @@ div#first {
 }
 div#tagline {
     font-size: 20px;
-    padding: 1%;
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 div#title {
     font-size: 30px;
@@ -115,6 +116,7 @@ div#picbx {
     max-width: 100%;
     height: auto;
     justify-content: center;
+    align-items: baseline;
 }
 div#social {
     border-style: dotted;
@@ -122,6 +124,8 @@ div#social {
     margin-left: auto;
     margin-right: auto;
     max-width: 95%;
+    font-size: 22px;
+    margin-bottom: 2%;
 }
 .pic {
     height: auto;
@@ -139,10 +143,6 @@ div#social {
 }
 .fa:hover {
     opacity: 0.7;
-}
-
-div#picbx {
-    align-items: baseline;
 }
 div#sean {
     display:flex;
@@ -213,4 +213,10 @@ div#boxthree {
     max-width: 100%;
     height: auto;
     justify-content: center;
+}
+.gb{
+    max-width: 25%;
+    border-style: dotted;
+    border-color: #2aade3; 
+    margin-top: 3%;
 }
