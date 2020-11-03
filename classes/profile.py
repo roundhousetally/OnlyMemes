@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Contains the Profile class """
+""" Contains the Profile class which represents rows in the profiles table. """
 from classes.base import Base, Parent
 from classes.post import Post
 import random
@@ -7,8 +7,9 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 import requests
 
+
 class Profile(Parent, Base):
-    """ Definition of a profile on the website. """
+    """ Represents rows in the profiles table of the database. """
     __tablename__ = 'profiles'
     name = Column(String(20), unique=True, nullable=False)
     description = Column(String(240), nullable=True)
@@ -17,10 +18,14 @@ class Profile(Parent, Base):
     posts = relationship("Post", backref="profile")
 
     def post(self):
-        """ Tells the profile to generate a new post. """
-        p = Post()
+        """ Generates a new post on the profile. """
+        p = Post()  # Creates the post object
+
+        # Pulls from the assigned API
         stuff = {'User-Agent': 'Mozilla/5.0'}
         r = requests.get(self.api, headers=stuff).json()
+
+        # Checks the structure of and pulls information from the json
         if isinstance(r, list):
             r = r[0]
         if 'punchline' in r:
@@ -34,6 +39,8 @@ class Profile(Parent, Base):
             link = r.get('data').get('children')[num].get('data').get('url')
             if '.jpg' in link or '.png' in link:
                 p.media = link
+
+        # If API pull fails, abort creation, otherwise save the new post
         if p.media is None and p.text is None:
             del p
         else:
@@ -42,4 +49,6 @@ class Profile(Parent, Base):
 
     def __str__(self):
         """ Returns a string representation of the instance. """
-        return "{}[{}] - {} ({} posts)".format(self.name, self.id, self.description[:15] + ('...' if len(self.description) > 15 else ''), len(self.posts))
+        return "{}[{}] - {} ({} posts)".format(self.name, self.id,
+                                               self.description[:15] + ('...' if len(self.description) > 15 else ''),
+                                               len(self.posts))

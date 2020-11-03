@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Posts class """
+""" Contains the Posts class which represents rows in the posts table. """
 from datetime import datetime
 from classes.base import Parent, Base
 from sqlalchemy import Column, String, Integer, DateTime, ForeignKey
@@ -7,7 +7,7 @@ from sqlalchemy.orm import relationship
 
 
 class Post(Parent, Base):
-    """ The post """
+    """ Represents rows in the posts table of the database. """
     __tablename__ = 'posts'
     text = Column(String(240), nullable=True)
     media = Column(String(100), nullable=True)
@@ -18,4 +18,8 @@ class Post(Parent, Base):
 
     def __str__(self):
         """ Returns a string representation of the instance. """
-        return "[{}]Owner: {} - hasText={} hasMedia={} ({} likes, {} shares)".format(self.id, self.profile.name, self.text is not None, self.media is not None, self.likes, self.shares)
+        return "[{}]Owner: {} - hasText={} hasMedia={} \
+                ({} likes, {} shares)".format(self.id, self.profile.name,
+                                              self.text is not None,
+                                              self.media is not None,
+                                              self.likes, self.shares)
