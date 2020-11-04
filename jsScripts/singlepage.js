@@ -2,7 +2,7 @@
 
 
 /*
-  This file is responsible for laoding the posts associated
+  This file is responsible for loading the posts associated
   with each profile and loading them as the user scrolls
 */
 
@@ -36,7 +36,7 @@ function setupPage () {
 }
 
 function getPosts (page) {
-    // Gets all posts with page numbe as input
+    // Gets all posts with page number as input
     $.ajax ({
 	type: 'GET',
 	url: 'http://onlymemes.biz/api/posts/' + profile.id + '/' + page,
