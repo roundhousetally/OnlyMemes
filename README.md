@@ -8,6 +8,7 @@
 OnlyMemes is a social media parody site that uses api's to automatically populate profiles bringing the internet back to its original purpose of serving us comedy and cats.
 
 ## Installation
+No installation needed! Feel free to scroll around at onlymemes.biz!
 
 ## APIs
 https://official-joke-api.appspot.com/random_joke
