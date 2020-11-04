@@ -1,6 +1,17 @@
+#!/usr/bin/node
+
+
+/*
+  This file is responsible for laoding the posts associated
+  with each profile and loading them as the user scrolls
+*/
+
 let profile = window.location.href;
 profile = profile.slice(profile.lastIndexOf("/") + 1).replace('-', ' ');
+
+
 function setupPage () {
+    // Sets up the page, loading profile info and first page of posts
     $.ajax ({
         type: 'GET',
         url: 'http://onlymemes.biz/api/profiles/' + profile,
@@ -25,6 +36,7 @@ function setupPage () {
 }
 
 function getPosts (page) {
+    // Gets all posts with page numbe as input
     $.ajax ({
 	type: 'GET',
 	url: 'http://onlymemes.biz/api/posts/' + profile.id + '/' + page,
@@ -48,10 +60,13 @@ function getPosts (page) {
     return (1);
 }
 
+
 document.addEventListener('DOMContentLoaded', function () {
+    // Waits for the page to load and runs a setup
     setupPage();
     let i = 1;
     $(window).scroll(function() {
+	// Detects when user scrolls and adds content
 	if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
 	    let newVar = getPosts(i);
 	    if (newVar === 0) {

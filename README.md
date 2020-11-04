@@ -10,6 +10,13 @@ OnlyMemes is a social media parody site that uses api's to automatically populat
 ## Installation
 
 ## APIs
+https://official-joke-api.appspot.com/random_joke
+
+https://api.adviceslip.com/
+
+https://docs.thecatapi.com/
+
+https://www.reddit.com/dev/api/
 
 ## User stories
 As a social media user I need a place to scroll that is comedic.
