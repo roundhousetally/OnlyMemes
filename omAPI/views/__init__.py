@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Creates the blueprint that is used in the API
+"""
 
 from flask import Blueprint
 
