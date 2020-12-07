@@ -1,3 +1,4 @@
+/* styling for the about page */
 html {
     height: 100%;
 }
@@ -55,7 +56,6 @@ body {
     padding-right: 3%;
     padding-left: 3%;
 }
-
 div#main {
     display: flex;
     flex-direction: column;
@@ -77,7 +77,6 @@ div#features {
     border-radius:1em;
     max-width: 95%;
 } 
-
 div#about {
     padding-top: 3%;
     padding-bottom: 3%;
@@ -134,12 +133,12 @@ div#social {
     margin-right: auto;
 }
 .fa {
-  max-width: 50%;;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-  color: #2aade3; 
-  padding: 1.5%;
+    max-width: 50%;;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    color: #2aade3; 
+    padding: 1.5%;
 }
 .fa:hover {
     opacity: 0.7;
@@ -192,7 +191,6 @@ div#boxone {
     max-width: 100%;
     height: auto;
     justify-content: center;
-
 }
 div#boxtwo {
     display: flex;

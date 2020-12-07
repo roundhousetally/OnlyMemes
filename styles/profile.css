@@ -1,3 +1,4 @@
+/* styling for profile pages */
 html {
 	height: 100%;
 }
@@ -71,9 +72,7 @@ body {
 }
 img {
     border-radius: 1em;
-  
 }
-
 .profilename {
     font-weight: bold;
     border-radius: 10px;
@@ -137,8 +136,7 @@ img {
     margin-top: 3%;
     border: 3px solid white;
     padding: 5%;
-}
-  
+} 
 .posts {
     display: flex;
     width: 50%;
@@ -154,7 +152,6 @@ img {
     background-color: #2aade3;
     text-align: center;
     color: white;
-
 }
 .posts > div {
     border-radius: 1em;
@@ -178,22 +175,22 @@ img {
     justify-content: center;
 }
 button {
-  color: white;
-  background-color: #2aade3;
-  text-align: center;
-  text-decoration: none;
-  display: flex;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 1em;
-  border-style: dotted;
-  border-color: white;
-  font-weight: bold;
-  padding: 1%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: .5%;
-  margin-bottom: .5%;
+    color: white;
+    background-color: #2aade3;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 1em;
+    border-style: dotted;
+    border-color: white;
+    font-weight: bold;
+    padding: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: .5%;
+    margin-bottom: .5%;
 }
 a {
   text-decoration: none;
