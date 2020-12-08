@@ -12,6 +12,7 @@ OnlyMemes was a smooth sailing project. We attribute our success to consistent c
 
 ## Installation
 No installation needed! Feel free to scroll around at onlymemes.biz!
+
 <img src="https://github.com/roundhousetally/OnlyMemes/blob/master/images/onlymobile.png" align="center">
 
 ## APIs
